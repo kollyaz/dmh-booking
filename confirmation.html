@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <title>Enter Your Details</title>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet"
+      />
+
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/queries.css" />
+      <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="img/favicon-16x16.png" />
+      <link rel="icon" type="image/x-icon" href="img/favicon-32x32.png" />
+      <script src="js/confirmation.js" defer></script>
+    </head>
+  </head>
+  <body>
+    <header class="booking-page-header"></header>
+    <main class="main-booking">
+      <section class="contact-section">
+        <div class="contact-section-text">
+          <img
+            class="dmh-logo"
+            src="img/DMH TOUCH LOGO Horizontal Pink No BG copy.png"
+            alt=""
+          />
+          <p>
+            DMH Touch offers premium hair services tailored to yourstyle. Our
+            experienced stylists provide top-notch haircuts,coloring, and
+            styling in a modern, relaxing environment.
+          </p>
+        </div>
+
+        <ul class="contact-links">
+          <li>
+            <a
+              href="tel:+13172682224"
+              target="_blank"
+              class="contact-link-item"
+            >
+              <ion-icon class="contact-icon" name="call-outline"></ion-icon>
+
+              <p class="contact-text">+1 (317) 268-2224</p>
+            </a>
+          </li>
+
+          <li>
+            <a
+              title="whatsapp"
+              href="https://api.whatsapp.com/message/FQU2XKDWFBHNE1?autoload=1&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link-item"
+            >
+              <ion-icon class="contact-icon" name="logo-whatsapp"></ion-icon>
+
+              <p class="booking-contact-text">Whatsapp</p>
+            </a>
+          </li>
+
+          <li>
+            <a
+              title="instagram"
+              href="https://www.instagram.com/dmhtouch?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link-item"
+            >
+              <ion-icon class="contact-icon" name="logo-instagram"></ion-icon>
+              <p class="contact-text">Instagram</p>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.google.com/maps/place/DMH+Touch+Salon/@39.7493645,-86.13275,11z/data=!3m1!4b1!4m6!3m5!1s0x886cabf96188d9f3:0x8898b54952150765!8m2!3d39.7493645!4d-86.13275!16s%2Fg%2F11qyk_q8ms?entry=ttu&g_ep=EgoyMDI0MDkxMC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link-item"
+            >
+              <ion-icon class="contact-icon" name="location-outline"></ion-icon>
+              <p class="contact-text">Greenwood, Indianapolis, USA</p>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="mailto:dmhtouch@gmail.com"
+              target="_blank"
+              class="contact-link-item"
+            >
+              <ion-icon class="contact-icon" name="mail-outline"></ion-icon>
+              <p class="contact-text">dmhtouch@gmail.com</p>
+            </a>
+          </li>
+
+          <li>
+            <div
+              class="contact-link-item dropdown-box"
+              onclick="toggleDropdown()"
+            >
+              <ion-icon class="contact-icon" name="time-outline"></ion-icon>
+              <div class="close-open-hours">
+                <p class="contact-text closed-open"></p>
+                <ion-icon
+                  class="dropdown-arrow"
+                  name="chevron-down-outline"
+                ></ion-icon>
+                <span class="open-time"></span>
+                <div class="dropdown-content"></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <article>
+        <!-- ------------------- -->
+        <!-- SELECTED HAIRSTYLE SECTION -->
+        <!-- ------------------- -->
+        <h2>Your Selected Hairstyle</h2>
+        <hr />
+        <div id="confirmation-details" class="confirmation-details"></div>
+
+        <!-- ------------------- -->
+        <!-- SELECTED TIME AND DATE INFO -->
+        <!-- ------------------- -->
+        <hr />
+        <p id="selectedInfo"></p>
+        <hr />
+
+        <!-- ------------------ -->
+        <!-- FORM SECTION -->
+        <!-- ------------------ -->
+        <section class="form-section">
+          <div class="form-container">
+            <h2>Enter Your Details</h2>
+
+            <form id="userInfoForm">
+              <div>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+
+              <textarea
+                id="user-notes"
+                placeholder="Add your notes here..."
+                rows="4"
+                cols="50"
+              ></textarea>
+
+              <div id="notes-container">
+                <a href="#" class="add-notes-link" onclick="toggleNotes(event)"
+                  >Add Notes</a
+                >
+              </div>
+
+              <button class="form-button" type="submit">Confirm Booking</button>
+            </form>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

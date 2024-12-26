@@ -1,0 +1,699 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.6;
+  /* font-family: 'Lato', sans-serif; */
+  font-family: 'Open Sans', sans-serif;
+
+  font-size: 1.6rem;
+  background-color: #F7DEE7;
+  color: #555;
+  position: relative;
+}
+
+section {
+  margin-bottom: 12rem;
+  margin-top: 3.6rem;
+}
+
+a {
+  cursor: pointer;
+}
+
+h4 {
+  margin: 1.2rem 0;
+  font-size: 1.8rem;
+}
+
+h2 {
+  color: #bd1b53;
+}
+
+/* ////////////////////////// */
+/*//////// DMH INFO /////////////
+/* ////////////////////////// */
+.dmh-logo {
+  height: 5.4rem;
+}
+
+.booking-subheader {
+  text-align: left;
+}
+
+.main-booking {
+  background-color: #fff;
+  width: 60%;
+  margin: 0 auto;
+  padding: 3.2rem;
+  margin-top: 10rem;
+  border-radius: 10px;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-section-text {
+  width: 50%;
+
+}
+
+.contact-links {
+  width: 50%;
+}
+
+.contact-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: #555;
+}
+
+.contact-links a:hover {
+  color: #BD1B53;
+}
+
+.contact-icon {
+  font-size: 2.4rem;
+  color: #bd1b53;
+}
+
+.contact-link-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.close-open-hours {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.open-time {
+  color: rgba(132, 128, 128, 0.43);
+}
+
+/* Dropdown content styling */
+.dropdown-box {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  overflow: hidden;
+  max-height: 0;
+  position: absolute;
+  top: 100%;
+  left: -2.4rem;
+  background: #fff;
+  padding: 10px;
+  z-index: 1000;
+  width: 270px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.dropdown-content div {
+  margin: 5px 0;
+  color: #555;
+  /* font-weight: 500; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-content.show {
+  border-radius: 8px;
+  max-height: 300px;
+  padding: 1.2rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-arrow.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: 1.2rem;
+}
+
+/*///////////////////////////////////////////////*/
+/* HAIRSTYLE SELECTION SECTION */
+/*///////////////////////////////////////////////*/
+
+/* Slider container */
+.hairstyle-slider-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Slider inner */
+.hairstyle-slider {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hairstyle-header-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Hairstyle cards */
+.hairstyle-card {
+  min-width: 18rem;
+  text-align: center;
+  background: #f7dee7;
+  border: none;
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.hairstyle-card img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.hairstyle-card p {
+  color: #bd1b53;
+  font-size: 1.5rem;
+}
+
+/* Chevron styles */
+.chevron-box {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.chevron {
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+.chevron:hover {
+  color: #bd1b53;
+}
+
+/* Hairstyle Slider */
+.hairstyle-slider {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  touch-action: pan-y;
+
+}
+
+.hairstyle-slider-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.hairstyle-card {
+  min-width: 200px;
+  text-align: center;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+}
+
+.hairstyle-card:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hairstyle-card.selected {
+  border: 1px solid #bd1b53;
+  box-shadow: 0 8px 12px rgba(189, 27, 83, 0.3);
+  background-color: #f7dee7;
+}
+
+.selected-hairstyle {
+  margin-top: 2.4rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+}
+
+.selected-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+/*///////////////////////////////////////////////*/
+/* CALENDAR SECTION */
+/* //////////////////////////////////////////// */
+.calendar-container {
+  /* margin-top: 3.6rem; */
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  /* background: #333; */
+  /* color: #; */
+}
+
+
+.calendar-header button {
+  padding: .5rem 1.2rem;
+  background-color: transparent;
+  color: #555;
+  border: none;
+  cursor: pointer;
+}
+
+.calendar-header button:hover {
+  color: #bd1b53;
+
+}
+
+.calendar-days,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.2rem;
+  padding: 1.2rem;
+  font-weight: 700;
+
+}
+
+.calendar-days div {
+  text-align: center;
+  font-weight: bold;
+  width: 80%;
+}
+
+.calendar-grid button {
+  width: 80%;
+  height: 4.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #edc0ce87;
+  cursor: pointer;
+  color: #BD1B53;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.calendar-grid .today {
+  background: linear-gradient(to bottom right, #f7dee7, #E02969);
+  color: #f7dee7;
+  font-weight: 600;
+
+}
+
+.calendar-grid .past {
+  background: #f7dee733;
+  color: #bd1b5380;
+  cursor: not-allowed;
+
+}
+
+.calendar-grid .selected {
+  background: #BD1B53;
+  color: #f7dee7;
+}
+
+
+
+/* ///////////////////// */
+
+.time-slot-container {
+  width: 100%;
+  /* background: #f; */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2.4rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+.time-slot-section {
+  margin-top: 20px;
+}
+
+h3 {
+  margin-bottom: 1.2rem;
+}
+
+.time-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.time-slot-grid button {
+  width: 80%;
+  height: 4.8rem;
+  padding: 10px;
+  color: #bd1b53;
+  border-radius: 8px;
+  border: none;
+  background-color: #f7dee7;
+  cursor: pointer;
+  text-align: center;
+}
+
+.time-slot-grid button:hover {
+  /* background-color: #ddd; */
+}
+
+.time-slot-grid button.selected {
+  background-color: #bd1b53;
+  color: #F7DEE7;
+}
+
+.time-slot-grid button.booked {
+  background-color: #bd1b53;
+  cursor: not-allowed;
+}
+
+/* //////////////// */
+.summary-container {
+  margin-top: 20px;
+  padding: 1.2rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.summary-container h2 {
+  margin-bottom: 10px;
+}
+
+#confirmBtn {
+  margin-top: 15px;
+  padding: 1.2rem 2.4rem;
+  width: 25%;
+  font-size: 16px;
+  color: #f7dee7;
+  background-color: #bd1b53;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#confirmBtn:disabled {
+  background-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+/* /////////////////////// */
+/* Confirmation Details Page */
+.confirmation-details {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Container Styling */
+.form-container {
+  background-color: white;
+  padding: 4rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: relative;
+  /* max-width: 400px; */
+  /* text-align: center; */
+}
+
+#selectedInfo {
+  margin: 1.2rem;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Focus Effect on Input Fields */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #bd1b53;
+  box-shadow: 0 0 8px rgba(189, 27, 83, 0.2);
+}
+
+/* Add Notes Link */
+#notes-container {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.2rem;
+}
+
+.add-notes-link {
+  color: #bd1b53;
+  cursor: pointer;
+}
+
+/* Button Styles */
+.form-button {
+  padding: 1.2rem;
+  background-color: #bd1b53;
+  color: #f7dee7;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 50%;
+  margin: 2.4rem auto;
+}
+
+.form-button:hover {
+  background-color: #9e174b;
+  /* Slightly darker shade */
+}
+
+/* Time Container */
+.time-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 1.2rem;
+}
+
+/* Bold Date */
+.bold-date {
+  font-weight: bold;
+  /* Makes only the date bold */
+}
+
+/* Date & Time Info */
+.date-time-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #BD1B53; */
+}
+
+/* Change Booking Link */
+.change-booking a {
+  color: #BD1B53;
+}
+
+/* User Notes Section */
+#user-notes {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+#user-notes.show {
+  max-height: 150px;
+  /* Adjust based on your content's height */
+  opacity: 1;
+}
+
+.add-notes-link.hidden {
+  display: none;
+}
+
+/* //////////////////////// */
+/* Booking Confirmed Page */
+.booking-confirmed-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 2.4rem;
+}
+
+/* Confirmed Icon */
+.confirmed-icon {
+  font-size: 9.6rem;
+  color: #BD1B53;
+}
+
+/* Confirmed Header */
+.booking-confirmed-h1 {
+  font-size: 3.6rem;
+  color: #BD1B53;
+  font-weight: 600;
+  margin-top: 1.2rem;
+}
+
+/* Confirmed Paragraph */
+.booking-confirmed-p {
+  font-weight: 350;
+  margin-top: 0.6rem;
+}
+
+/* Success Page */
+.success-page {
+  text-align: center;
+}
+
+/* Success Time Date */
+.success-time-date {
+  margin-bottom: 3.6rem;
+  margin-top: 0;
+}
+
+/* Success Time Date Info */
+.success-time-date-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Success Time Container */
+.success-time-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Success Done Button Box */
+.success-done-button-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Success Done Button */
+.success-done-button {
+  padding: 1.2rem;
+  background-color: #bd1b53;
+  color: #f7dee7;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 25%;
+  margin: 2.4rem 0;
+}
+
+.success-done-button:hover {
+  background-color: #9e174b;
+  /* Darker shade on hover */
+}
+
+
+
+
+
+
+
+/* .contact-link-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contact-icon {
+  margin-right: 10px;
+} */
+
+.close-open-hours {
+  /* display: flex;
+  flex-direction: column; */
+  position: relative;
+}
+
+.closed-open {
+  font-weight: 600;
+}

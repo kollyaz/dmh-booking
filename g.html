@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Dropdown</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .contact-link-item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+      }
+
+      .close-open-hours {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .contact-text {
+        font-weight: bold;
+      }
+
+      .open-time {
+        color: gray;
+        font-size: 0.9em;
+      }
+
+      /* Dropdown content styling */
+      .dropdown-content {
+        overflow: hidden;
+        max-height: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+        z-index: 1000;
+        width: 200px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+
+      .dropdown-content p {
+        margin: 5px 0;
+      }
+
+      .dropdown-content.show {
+        max-height: 300px; /* Enough to fit the content */
+        padding: 10px; /* Restore padding */
+      }
+
+      .dropdown-arrow.rotate {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <li>
+      <a class="contact-link-item" onclick="toggleDropdown()">
+        <ion-icon class="contact-icon" name="time-outline"></ion-icon>
+        <div class="close-open-hours">
+          <p class="contact-text closed-open"></p>
+          <ion-icon
+            class="dropdown-arrow"
+            name="chevron-down-outline"
+          ></ion-icon>
+          <span class="open-time"></span>
+          <div class="dropdown-content"></div>
+        </div>
+      </a>
+    </li>
+
+    <script>
+      function updateStatus() {
+        const now = new Date();
+        const hours = now.getHours();
+        const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+        const closedOpenText = document.querySelector('.closed-open');
+        const openTimeText = document.querySelector('.open-time');
+
+        const openingHour = 8; // 8:00 AM
+        const closingHour = 17; // 5:00 PM
+
+        const daysOfWeek = [
+          'Sunday',
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+        ];
+
+        const dropdownContent = document.querySelector('.dropdown-content');
+        dropdownContent.innerHTML = ''; // Clear previous content
+
+        // Generate the dropdown dynamically
+        daysOfWeek.forEach((dayName, index) => {
+          const isToday = index === day ? 'Today' : dayName;
+          const status =
+            index === 0
+              ? 'Closed' // Sunday is closed
+              : '09:00 - 17:00';
+
+          dropdownContent.innerHTML += `
+          <p>${isToday}: ${status}</p>
+        `;
+        });
+
+        // Update closed/open status
+        if (day === 0 || hours < openingHour || hours >= closingHour) {
+          // If it's Sunday or outside business hours
+          closedOpenText.textContent = 'Closed';
+          openTimeText.textContent =
+            day === 0 ? 'Opens tomorrow at 09:00' : 'Opens today at 09:00';
+        } else {
+          // During business hours
+          closedOpenText.textContent = `Open until ${closingHour}:00`;
+          openTimeText.textContent = ''; // Hide open-time
+        }
+      }
+
+      function toggleDropdown() {
+        const dropdown = document.querySelector('.dropdown-content');
+        const arrow = document.querySelector('.dropdown-arrow');
+
+        dropdown.classList.toggle('show');
+        arrow.classList.toggle('rotate');
+      }
+
+      // Initialize the status when the page loads
+      updateStatus();
+    </script>
+  </body>
+</html>
